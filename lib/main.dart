@@ -73,6 +73,21 @@ class MyApp extends StatelessWidget {
       ],
     );
 
+    Widget textSection = Container(
+      padding: const EdgeInsets.all(32),
+      child: const Text(
+        'Pantai Modangan adalah salah satu destinasi wisata '
+        'di Kecamatan Donomulyo, Kabupaten Malang. Pantai ini '
+        'memiliki panorama laut yang indah, pasir putih yang luas, '
+        'serta terkenal dengan spot paralayang di bukitnya. '
+        'Tempat ini cocok untuk menikmati matahari terbenam '
+        'dan wisata alam yang menenangkan.\n\n'
+        'Nama: Saria Fauzani\n'
+        'NIM: 2341760178',
+        softWrap: true,
+      ),
+    );
+
     return MaterialApp(
       title: 'Saria Fauzani - 2341760178',
       home: Scaffold(
@@ -83,9 +98,11 @@ class MyApp extends StatelessWidget {
           children: [
             titleSection,
             buttonSection,
+            textSection,
           ],
         ),
       ),
     );
   }
+
 }
