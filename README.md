@@ -1,16 +1,25 @@
-# layout_flutter
+# Layout Flutter
+---
 
-A new Flutter project.
+**Nama:** Saria Fauzani  
+**NIM:** 2341760178  
 
-## Getting Started
+A new Flutter project untuk mempelajari konsep dan praktik untuk dasar-dasar framework Flutter dengan menerapkan layout dan navigasi.
 
-This project is a starting point for a Flutter application.
+# Screenshoot Hasil Jobsheet Flutter 2
+---
+## Praktikum 1: Membangun Layout di Flutter
 
-A few resources to get you started if this is your first Flutter project:
+![Screenshot layout_flutter](images/prak-1.png)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Praktikum 2: Implementasi button row
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![Screenshot layout_flutter](images/prak-2.png)
+
+## Praktikum 3: Implementasi text section
+
+![Screenshot layout_flutter](images/prak-3.png)
+
+## Praktikum 4: Implementasi image section
+
+![Screenshot layout_flutter](images/prak-4.png)
