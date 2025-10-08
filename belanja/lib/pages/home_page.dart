@@ -3,7 +3,7 @@ import '../models/item.dart';
 
 class HomePage extends StatelessWidget {
   HomePage({super.key});
-  
+
   final List<Item> items = [
     Item(
       name: 'Sugar',
@@ -19,11 +19,17 @@ class HomePage extends StatelessWidget {
       stock: 15,
       rating: 4.0,
     ),
+    Item(
+      name: 'Flour',
+      price: 7000,
+      photo: 'images/Flour.jpg',
+      stock: 25,
+      rating: 4.2,
+    ),
   ];
-  
+
   @override
   Widget build(BuildContext context) {
-    
     return Scaffold(
       appBar: AppBar(
         title: Text('Shopping List'),
@@ -38,7 +44,7 @@ class HomePage extends StatelessWidget {
             crossAxisCount: 2, // tampil 2 kolom
             crossAxisSpacing: 8,
             mainAxisSpacing: 8,
-            childAspectRatio: 0.8, // proporsi kartu
+            childAspectRatio: 0.7, // proporsi kartu
           ),
           itemBuilder: (context, index) {
             final item = items[index];
@@ -47,14 +53,16 @@ class HomePage extends StatelessWidget {
                 Navigator.pushNamed(context, '/item', arguments: item);
               },
               child: Card(
-                  elevation: 3,
+                elevation: 5,
+                shadowColor: Colors.grey.shade300,
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(12),
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Expanded(
+                    Hero(
+                      tag: item.photo,
                       child: ClipRRect(
                         borderRadius: const BorderRadius.vertical(
                           top: Radius.circular(12),
@@ -74,7 +82,9 @@ class HomePage extends StatelessWidget {
                           Text(
                             item.name,
                             style: const TextStyle(
-                                fontWeight: FontWeight.bold, fontSize: 16),
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16,
+                            ),
                           ),
                           Text("Rp${item.price}"),
                           Row(
@@ -83,10 +93,13 @@ class HomePage extends StatelessWidget {
                               Text("Stok: ${item.stock}"),
                               Row(
                                 children: [
-                                  const Icon(Icons.star,
-                                      size: 16, color: Colors.orange),
+                                  const Icon(
+                                    Icons.star,
+                                    size: 16,
+                                    color: Colors.orange,
+                                  ),
                                   Text(item.rating.toString()),
-                                 ],
+                                ],
                               ),
                             ],
                           ),
