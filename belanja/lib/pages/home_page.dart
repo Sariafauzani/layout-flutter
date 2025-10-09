@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import '../models/item.dart';
+import '../widgets/item_card.dart';
+import '../widgets/footer.dart';
 
 class HomePage extends StatelessWidget {
   HomePage({super.key});
@@ -47,71 +49,13 @@ class HomePage extends StatelessWidget {
             childAspectRatio: 0.7, // proporsi kartu
           ),
           itemBuilder: (context, index) {
-            final item = items[index];
-            return InkWell(
-              onTap: () {
-                Navigator.pushNamed(context, '/item', arguments: item);
-              },
-              child: Card(
-                elevation: 5,
-                shadowColor: Colors.grey.shade300,
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(12),
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Hero(
-                      tag: item.photo,
-                      child: ClipRRect(
-                        borderRadius: const BorderRadius.vertical(
-                          top: Radius.circular(12),
-                        ),
-                        child: Image.asset(
-                          item.photo,
-                          fit: BoxFit.cover,
-                          width: double.infinity,
-                        ),
-                      ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            item.name,
-                            style: const TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 16,
-                            ),
-                          ),
-                          Text("Rp${item.price}"),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Text("Stok: ${item.stock}"),
-                              Row(
-                                children: [
-                                  const Icon(
-                                    Icons.star,
-                                    size: 16,
-                                    color: Colors.orange,
-                                  ),
-                                  Text(item.rating.toString()),
-                                ],
-                              ),
-                            ],
-                          ),
-                        ],
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            );
+            return ItemCard(item: items[index]);
           },
         ),
+      ),
+      bottomNavigationBar: const Footer(
+        name: 'Saria Fauzani',
+        nim: '2341760178',
       ),
     );
   }
