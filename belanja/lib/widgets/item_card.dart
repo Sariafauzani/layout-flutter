@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import '../models/item.dart';
 
 class ItemCard extends StatelessWidget {
@@ -10,7 +11,7 @@ class ItemCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return InkWell(
       onTap: () {
-        Navigator.pushNamed(context, '/item', arguments: item);
+        context.push('/item', extra: item);
       },
       child: Card(
         elevation: 6,
@@ -98,7 +99,7 @@ class ItemCard extends StatelessWidget {
                         padding: const EdgeInsets.symmetric(vertical: 8),
                       ),
                       onPressed: () {
-                        Navigator.pushNamed(context, '/item', arguments: item);
+                        context.push('/item', extra: item);
                       },
                       child: const Text(
                         'Lihat Detail',

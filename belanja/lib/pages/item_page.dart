@@ -3,12 +3,12 @@ import '../models/item.dart';
 import '../widgets/footer.dart';
 
 class ItemPage extends StatelessWidget {
-  const ItemPage({super.key});
+  final Item item;
+
+  const ItemPage({super.key, required this.item});
 
   @override
   Widget build(BuildContext context) {
-    final item = ModalRoute.of(context)!.settings.arguments as Item;
-
     return Scaffold(
       backgroundColor: Colors.blue.shade50,
       appBar: AppBar(
@@ -24,7 +24,6 @@ class ItemPage extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            // Hero transition untuk gambar
             Hero(
               tag: item.photo,
               child: ClipRRect(
@@ -38,28 +37,18 @@ class ItemPage extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 16),
-
-            // Card detail produk
             Card(
               elevation: 5,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(15),
-              ),
+              shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
               child: Padding(
-                padding: const EdgeInsets.symmetric(
-                  vertical: 20,
-                  horizontal: 16,
-                ),
+                padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 16),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Center(
                       child: Text(
                         item.name,
-                        style: const TextStyle(
-                          fontSize: 26,
-                          fontWeight: FontWeight.bold,
-                        ),
+                        style: const TextStyle(fontSize: 26, fontWeight: FontWeight.bold),
                       ),
                     ),
                     const SizedBox(height: 16),
@@ -72,65 +61,39 @@ class ItemPage extends StatelessWidget {
                       ),
                     ),
                     const SizedBox(height: 8),
-                    Text(
-                      'Stok tersedia: ${item.stock}',
-                      style: const TextStyle(
-                        fontSize: 16,
-                        color: Colors.black87,
-                      ),
-                    ),
+                    Text('Stok tersedia: ${item.stock}',
+                        style: const TextStyle(fontSize: 16, color: Colors.black87)),
                     const SizedBox(height: 8),
                     Row(
                       children: [
                         const Icon(Icons.star, color: Colors.orange),
-                        Text(
-                          item.rating.toString(),
-                          style: const TextStyle(fontSize: 16),
-                        ),
+                        Text(item.rating.toString(), style: const TextStyle(fontSize: 16)),
                       ],
                     ),
                     const SizedBox(height: 20),
-
-                    // Deskripsi contoh (opsional)
                     const Text(
                       'Deskripsi Produk',
-                      style: TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.bold,
-                      ),
+                      style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                     ),
                     const SizedBox(height: 6),
                     Text(
                       'Produk ${item.name} adalah bahan kebutuhan dapur yang berkualitas tinggi '
                       'dan cocok digunakan untuk berbagai keperluan rumah tangga. '
                       'Harga terjangkau dengan kualitas terbaik.',
-                      style: TextStyle(
-                        fontSize: 14,
-                        color: Colors.grey.shade800,
-                      ),
+                      style: TextStyle(fontSize: 14, color: Colors.grey.shade800),
                       textAlign: TextAlign.justify,
                     ),
                     const SizedBox(height: 24),
-
-                    // Tombol aksi
                     Center(
                       child: ElevatedButton.icon(
                         onPressed: () {},
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Colors.blue,
-                          padding: const EdgeInsets.symmetric(
-                            horizontal: 32,
-                            vertical: 14,
-                          ),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(10),
-                          ),
+                          padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 14),
+                          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
                         ),
                         icon: const Icon(Icons.shopping_cart),
-                        label: const Text(
-                          'Tambah ke Keranjang',
-                          style: TextStyle(fontSize: 16),
-                        ),
+                        label: const Text('Tambah ke Keranjang', style: TextStyle(fontSize: 16)),
                       ),
                     ),
                   ],
@@ -141,8 +104,6 @@ class ItemPage extends StatelessWidget {
           ],
         ),
       ),
-
-      // Footer
       bottomNavigationBar: const Footer(
         name: 'Saria Fauzani',
         nim: '2341760178',
