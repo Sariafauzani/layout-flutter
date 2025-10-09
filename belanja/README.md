@@ -1,16 +1,114 @@
-# belanja
+# Praktikum Flutter - Layout dan Navigasi
 
-A new Flutter project.
+**Nama:** Saria Fauzani  
+**NIM:** 2341760178   
+**No Absen:** 24
 
-## Getting Started
+---
+## Praktikum 5: Membangun Navigasi di Flutter
+**Langkah 1: Siapkan project baru**
 
-This project is a starting point for a Flutter application.
+![Screenshot layout_flutter](images/L1.png)
 
-A few resources to get you started if this is your first Flutter project:
+**Langkah 2: Mendefinisikan Route**
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- home_page.dart
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+![Screenshot layout_flutter](images/L2.1.png)
+
+- item_page.dart
+
+![Screenshot layout_flutter](images/L2.2.png)
+
+**Langkah 3: Lengkapi Kode di main.dart**
+
+![Screenshot layout_flutter](images/L3.png)
+
+**Langkah 4: Membuat data model**
+
+![Screenshot layout_flutter](images/L4.png)
+
+**Langkah 5: Lengkapi kode di class HomePage**
+
+![Screenshot layout_flutter](images/L5.png)
+
+**Langkah 6: Membuat ListView dan itemBuilder**
+
+![Screenshot layout_flutter](images/L6.png)
+
+**Langkah 7: Menambahkan aksi pada ListView**
+
+![Screenshot layout_flutter](images/L7.png)
+
+----
+***📸Hasil Output***
+
+![Screenshot layout_flutter](images/hasil.1.png)
+
+#
+
+## Tugas Praktikum 2
+**Tugas 1:** Menambahkan informasi arguments pada penggunaan Navigator
+
+![Screenshot layout_flutter](images/T1.png)
+
+**Tugas 2:** Pembacaan nilai yang dikirimkan pada halaman sebelumnya dapat dilakukan menggunakan ModalRoute.
+
+![Screenshot layout_flutter](images/T2.png)
+
+**Tugas 3:** Mengubah tampilan menjadi GridView
+
+- HomePage: ubah dari ListView.builder() menjadi GridView.builder().
+
+![Screenshot layout_flutter](images/T3.2.png)
+
+- Model Item: tambahkan atribut baru.
+
+![Screenshot layout_flutter](images/T3.1.png)
+
+---
+***📸Hasil Output***
+
+![Screenshot layout_flutter](images/hasil.3.png)
+
+**Tugas 4:** Implementasikan Hero widget
+
+- item_card.dart (Home page):
+
+![Screenshot layout_flutter](images/T4.1.png)
+
+- item_page.dart (Detail Page):
+
+![Screenshot layout_flutter](images/T4.2.png)
+
+**Tugas 5:** Split Widget menjadi kode yang lebih kecil dan Menambahkan Footer
+
+1. **ItemCard:** Widget untuk tampilan satu produk (gambar, harga, stok, rating) yang digunakan di HomePage.
+
+2. **ItemPage:** Menampilkan detail produk saat salah satu item diklik.
+
+3. **HomePage:** Menampilkan daftar produk menggunakan GridView, dan memanggil ItemCard untuk setiap produk.
+
+4. **Footer:** Widget kecil untuk bagian bawah halaman, menampilkan Nama & NIM.
+
+--- 
+Menambahkan Footer
+
+![Screenshot layout_flutter](images/T5.Footer.png)
+
+***📸Hasil Output***
+
+![Screenshot layout_flutter](images/hasil.4.5.png)
+
+![Screenshot layout_flutter](images/hasil.4.5.2.png)
+
+**Tugas 6:** Modifikasi menggunakan plugin go_router
+
+![Screenshot layout_flutter](images/T6.go-router.png)
+
+---
+
+***📸Hasil Output***
+
+![Screenshot layout_flutter](images/hasil.6.1.png)
+![Screenshot layout_flutter](images/hasil.6.2.png)
